@@ -1,0 +1,42 @@
+{
+  "name": "job-scheduler",
+  "version": "1.0.0",
+  "description": "Distributed job scheduler with Node.js, CRON, Redis queue, and MongoDB persistence",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "worker": "node src/worker.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "mongoose": "^8.0.0",
+    "redis": "^4.6.10",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0",
+    "axios": "^1.6.2",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "@jest/globals": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/worker.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
+  },
+  "keywords": ["nodejs", "cron", "redis", "mongodb", "job-scheduler", "queue"],
+  "author": "Portfolio Project",
+  "license": "MIT"
+}
